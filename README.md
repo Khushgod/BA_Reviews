@@ -1,88 +1,50 @@
-British Airways Review Analysis & Sentiment Prediction
+✈️British Airways Review Analysis & Sentiment Prediction
 
-Project Overview
-This project involves a comprehensive analysis of British Airways customer reviews scraped from Skytrax. Using natural language processing techniques, sentiment analysis, topic modeling, and machine learning approaches, we analyze customer opinions to extract insights and build a predictive model for sentiment classification.
+📌 Project Overview
+This project is a deep dive into the voice of British Airways customers, harnessing the power of Natural Language Processing (NLP) and Machine Learning (ML) to unearth insights from reviews scraped from Skytrax. Our objective? Not just to analyze what customers are saying—but to understand how they feel, what matters to them most, and to build a predictive sentiment classifier that captures these nuances with high accuracy.
 
-Data Collection
-Web scraping was used to collect British Airways reviews from the Skytrax website
-Data includes review text and verification status
-The scraped data was cleaned and preprocessed to create a structured dataset for analysis
+📥 Data Collection
+Reviews were programmatically scraped from the Skytrax website. Each record includes:
+✍️ Customer review text
+✅ Verification status
 
-Analysis Pipeline
-The project is divided into several key steps:
-1. Data Preprocessing
+After collection, data underwent rigorous cleaning and structuring to prepare it for downstream analysis.
+🧪 Analysis Pipeline
 
-Text cleaning (removing special characters, lowercasing)
+
+🔧 1. Data Preprocessing
+A robust NLP pipeline was developed:
+Text cleaning (lowercasing, punctuation & special character removal)
 Tokenization and lemmatization
-Stopword removal with airline-specific custom stopwords
-Feature extraction for machine learning
-
-2. Exploratory Data Analysis
-
-Sentiment Analysis: Using VADER and TextBlob to classify reviews as positive, neutral, or negative
-Topic Modeling: Applying Latent Dirichlet Allocation (LDA) to discover review themes
-Word Cloud Generation: Creating visualizations of most frequent terms overall and by sentiment
-Aspect-Based Analysis: Examining sentiment toward specific aspects like crew, food, service, etc.
-
-3. Machine Learning Model
-We developed a sentiment prediction model using Logistic Regression:
-Model Performance:
-Accuracy on test set: 0.8462
-
-Classification Report:
-              precision    recall  f1-score   support
-   negative       0.82      0.89      0.86       100
-   positive       0.87      0.80      0.84        95
-   
-   accuracy                           0.85       195
-  macro avg       0.85      0.84      0.85       195
-weighted avg      0.85      0.85      0.85       195
-This strong performance (85% accuracy) demonstrates that our model effectively captures sentiment patterns in British Airways reviews.
-
-Key Features
-Comprehensive Text Preprocessing: Multi-stage cleaning and normalization pipeline for review text
-Multi-faceted Analysis: Combined analysis approaches:
-
-Sentiment scoring and classification
-Topic discovery through LDA
-Word frequency and association analysis
-Aspect-based sentiment extraction
+Airline-specific stopword removal
+Feature extraction using TF-IDF
 
 
-Interactive Visualizations:
+📊 2. Exploratory Data Analysis
+Comprehensive exploratory analysis was conducted through:
+Sentiment Analysis with VADER and TextBlob
+Topic Modeling via Latent Dirichlet Allocation (LDA)
+Word Clouds per sentiment category
+Aspect-Based Sentiment Analysis (crew, food, service, etc.)
 
-Sentiment distribution charts
-Topic distribution analysis
-Word clouds for different sentiments
-Feature importance visualizations
+🤖 Machine Learning Model
+A Logistic Regression model was trained on TF-IDF features to classify review sentiments.
+📈 Performance Summary
 
+Test Set Accuracy: 0.8462
 
-Predictive Modeling:
+Classification Report Highlights:
 
-TF-IDF vectorization of review text
-Logistic Regression with hyperparameter tuning
-Cross-validation for performance evaluation
-Model persistence for future use
+Sentiment	Precision	Recall	F1-score
+Negative	82%	89%	86%
+Positive	87%	80%	84%
 
+Macro Avg: 85% Precision | 84% Recall | 85% F1-score
 
-Feature Importance Analysis:
+Weighted Avg: 85% across all metrics
 
-Identification of key terms associated with positive/negative sentiment
-Understanding the most predictive words for sentiment classification
-
-
-
-Installation & Usage
+💡 Conclusion: Our model reliably captures sentiment nuances with strong predictive performance.
 
 Requirements
-pandas
-numpy
-matplotlib
-seaborn
-nltk
-scikit-learn
-wordcloud
-gensim (optional, for topic modeling)
-pyLDAvis (optional, for topic visualization)
-textblob
-joblib
+Install all required packages using:
+pip install pandas numpy matplotlib seaborn nltk scikit-learn wordcloud gensim pyLDAvis textblob joblib
